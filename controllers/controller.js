@@ -11,7 +11,7 @@ const postNewArticle = (req, res) => {
     }
     if (req.method === 'POST') {
         let titleLength=req.body.title.split(' ');
-        if(titleLength.length >25){
+        if(titleLength.join('').length >25){
         const article = new Article(req.body)
         article.save()
             .then(result => {
